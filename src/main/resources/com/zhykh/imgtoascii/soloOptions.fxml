@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zhykh.imgtoascii.EventController">
+   <children>
+      <Label fx:id="currPix" prefHeight="17.0" prefWidth="229.0" text="Current image ratio: " />
+      <Button fx:id="selectImgButton" mnemonicParsing="false" onAction="#selectImg" text="Select image" />
+      <Label prefHeight="17.0" prefWidth="139.0" text="Select compression level:" />
+      <ChoiceBox fx:id="comprLvl" onAction="#updateCurrPix" prefHeight="25.0" prefWidth="48.0" value="1">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="1" />
+               <String fx:value="2" />
+               <String fx:value="3" />
+               <String fx:value="4" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Label prefHeight="17.0" prefWidth="134.0" text="Select coloring mode:" />
+      <ChoiceBox prefWidth="150.0" value="colorful">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="colorful" />
+               <String fx:value="monochrome" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#soloPressed" text="Print" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="23.0" right="40.0" />
+         </padding>
+      </VBox>
+   </children>
+   <padding>
+      <Insets left="50.0" top="30.0" />
+   </padding>
+</VBox>
